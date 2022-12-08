@@ -17,7 +17,6 @@ def find_max_calories(input):
     dict = {}
     elf = 1
     calories = 0
-    max_calories = 0
 
     for i in input:
         if i == 0:
