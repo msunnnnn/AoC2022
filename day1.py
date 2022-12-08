@@ -13,22 +13,37 @@ def convert_to_numbers(nums):
             nums_list.append(0)
     return nums_list
 
-def find_max_calories(input):
-    dict = {}
+"""Takes in a list of numbers
+    adds elements together until current element is 0
+    appends total to a new list
+    sorts list from greatest to least"""
+
+def calories_sorted(input):
+    calories_list = []
     elf = 1
     calories = 0
 
     for i in input:
         if i == 0:
-
-            dict[calories] = elf
+            calories_list.append(calories)
             elf += 1
             calories = 0
         else:
             calories += i
 
-    return max(dict.keys())
+    calories_list.sort(reverse=True)
+    return calories_list
+
+def top_n(nums, n):
+    total = 0
+    while n != 0:
+        total += nums[n-1]
+        n -= 1
+    return total
 
 nums = convert_to_numbers(string_list)
-print(find_max_calories(nums))
+sorted = calories_sorted(nums)
+print(top_n(sorted, 3))
+
+
 
